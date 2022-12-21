@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo1 {
+    margin-bottom: -10px;
+}
+.res {
+    position: absolute;
+    right: 15px;
+    top: -68px;
+    border: none;
+    padding: 0;
+}
+footer{
+    height: 300px;
+    background-color: #384848;
+}
+.logo2 {
+    background-color: #384848;
+    padding: 50px 0 15px 200px ;
+}
+.logo2 img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+    background-color: #384848;
+}
+.logo2 p{
+    padding: 15px 0;
+    background-color: #384848;
+    color: white;
+}
+.line {
+    margin: 5px 0 0 200px;
+    width: 200px;
+    border-bottom: 1px solid white;
+}
+.back{
+    background-color: #384848;
+}
+@media screen and (max-width: 425px) {
+    .logo2 {
+        padding: 50px 0 15px 40px ;
+    }
+    .line{
+        margin: 5px 0 0 40px;
+    }
+}
+.title {
+    text-align: center;
+    padding: 15px;
+}
+.title p{
+    font-size: large;
+}
+.title span{
+    font-size: x-large;
+    border-bottom: 1px solid black;
+}
+.card-body a{
+    border: 3px solid black;
+    padding: 5px 10px;
+    font-size: small;
+    color: black;
+}
+.card {
+    border: none;
+}
+.link{
+    padding: 10px 0 30px 0;
+}
+.link a{
+    text-decoration: none;
+    color: #f5f4f2;
+    background-color: #384848;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 16px 25px;
+    display: inline-block;
+}

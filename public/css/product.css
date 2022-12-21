@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.logo1 {
+    margin-bottom: -10px;
+}
+.res {
+    position: absolute;
+    right: 15px;
+    top: -68px;
+    border: none;
+    padding: 0;
+}
+a {
+    color: white;
+}
+main {
+    padding-bottom: 30px;
+}
+.title p{
+    font-size: small;
+}
+.search{
+    padding: 10px 0 50px 0;
+}
+.nut{
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 0;
+}
+.card {
+    border: none;
+}
+.card-body {
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: 700;
+}
+.card-body a{
+    color: black;
+}
+@media screen and (max-width: 425px){
+    .nut{
+        width: 396px;
+    }
+}
+@media screen and (max-width: 375px){
+    .nut{
+        width: 346px;
+    }
+}
+@media screen and (max-width: 320px){
+    .nut{
+        width: 292px;
+    }
+}
+footer{
+    height: 300px;
+    background-color: #384848;
+}
+.logo2 {
+    background-color: #384848;
+    padding: 50px 0 15px 200px ;
+}
+.logo2 img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+    background-color: #384848;
+}
+.logo2 p{
+    padding: 15px 0;
+    background-color: #384848;
+    color: white;
+}
+.line {
+    margin: 5px 0 0 200px;
+    width: 200px;
+    border-bottom: 1px solid white;
+}
+.back{
+    background-color: #384848;
+}
+@media screen and (max-width: 425px) {
+    .logo2 {
+        padding: 50px 0 15px 40px ;
+    }
+    .line{
+        margin: 5px 0 0 40px;
+    }
+}

@@ -1,0 +1,10 @@
+.nut1{
+    text-align: right;
+}
+.form {
+    padding: 30px 30px;
+}
+.form-control {
+    border: none;
+    border: 3px solid #000000;
+}
