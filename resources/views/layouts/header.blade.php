@@ -48,7 +48,7 @@
                     <a class="nav-link" href="{{route('home.product')}}">PRODUCT</a>
                 </li>
                 <li class="nav-item ml-4">
-                    <a class="nav-link" href="">CART</a>
+                    <a class="nav-link" href="{{route('cart.view')}}">CART</a>
                 </li>
                 <li class="nav-item ml-4">
                     <a class="nav-link" href="">RESOURCES</a>

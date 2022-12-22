@@ -40,7 +40,8 @@ Route::group(['prefix' => 'cart'], function() {
     Route::get('/update/{id}/{quantity?}', [CartController::class, 'update'])->name('cart.update');
     Route::post('/update-all', [CartController::class, 'updateAll'])->name('cart.updateAll');
     Route::get('/clear', [CartController::class, 'clear'])->name('cart.clear');
-    Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+    Route::get('/checkout', [CartController::class, 'checkout'])->name('cart.checkout')->middleware('cus');
+    Route::post('/checkout', [CartController::class, 'order_checkout'])->middleware('cus');
 });
 
 Route::get('/admin/login', [AdminController::class, 'login'])->name('admin.login');

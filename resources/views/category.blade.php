@@ -55,10 +55,10 @@
             @foreach ($products as $prd)
             <div class="col-lg-3 col-md-6 mb-4">
                 <div class="card">
-                    <a href="{{route('home.productDetail', $prd->id)}}"><img class="card-img-top"
+                    <a href="{{route('home.productDetail', ['product' => $prd->id, 'slug' => Str::slug($prd->name)])}}"><img class="card-img-top"
                             src="{{(url(''))}}/uploads/{{$prd->image}}" alt=""></a>
                     <div class="card-body">
-                        <a href="{{route('home.productDetail', $prd->id)}}">{{$prd->name}}</a>
+                        <a href="{{route('home.productDetail', ['product' => $prd->id, 'slug' => Str::slug($prd->name)])}}">{{$prd->name}}</a>
                     </div>
                 </div>
             </div>

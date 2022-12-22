@@ -63,10 +63,10 @@
                                 </div>
                                 <div class="col-lg-9 col-md-8 col-sm-9 opt">
                                     <div class="input ml-3">
-                                        <button class="btn-fake btn left_ip" (click)="mark('-')" id="tru"><i
+                                        <button class="btn-fake btn left_ip" id="tru"><i
                                                 class="fa fa-minus"></i></button>
-                                        <input type="text" value="1" id="quantity">
-                                        <button class="btn-fake btn right_ip" (click)="mark('+')" id="cong"><i
+                                        <input type="text" value="1" id="kq" name="quantity">
+                                        <button class="btn-fake btn right_ip" id="cong"><i
                                                 class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="addCart mt-5">
-                        <button (click)="addCart()">ADD TO CART</button>
+                        <a href="{{route('cart.add', $product->id)}}" ><button>ADD TO CART</button> </a>
                     </div>
                 </div>
             </div>
