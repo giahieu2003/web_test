@@ -21,7 +21,7 @@ use App\Http\Controllers\CartController;
 Route::group(['prefix' => ''], function() {
     Route::get('/', [HomeController::class,'index'])->name('home.index');
     Route::get('/about-us', [HomeController::class, 'about'])->name('home.about');
-    Route::get('/contact-us', [HomeController::class, 'contact'])->name('home.contact');
+    // Route::get('/contact-us', [HomeController::class, 'contact'])->name('home.contact');
     Route::get('/product', [HomeController::class, 'product'])->name('home.product');
     Route::get('/category/{cat}', [HomeController::class, 'category'])->name('home.category');
     Route::get('/product-detail/{product}-{slug}', [HomeController::class, 'productDetail'])->name('home.productDetail');
@@ -30,6 +30,7 @@ Route::group(['prefix' => ''], function() {
     Route::get('/profile', [HomeController::class, 'profile'])->name('home.profile')->middleware('cus');
     Route::post('/login', [HomeController::class, 'check_login']);
     Route::post('/register', [HomeController::class, 'check_register'])->name('home.register');
+    Route::post('/about-us', [HomeController::class, 'send_contact']);
 });
 
 Route::group(['prefix' => 'cart'], function() {

@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Customer;
 use Auth;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -80,5 +81,19 @@ class HomeController extends Controller
     {
         $randomProducts = Product::inRandomOrder()->limit(1)->get();
         return view('product-detail', compact('product','randomProducts'));
+    }
+
+    public function send_contact()
+    {
+        $name = request('name');
+        $email = request('email');
+        $subject = request('subject');
+        $content = request('content');
+        
+        $send = Mail::to($email)->send(new ContactMail($name, $content, $subject));
+
+        // dd ($send);
+        
+        return redirect()->route('home.about')->with('yes', 'Gửi contact thành công');
     }
 }

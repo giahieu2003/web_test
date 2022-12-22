@@ -83,10 +83,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
         {
-            return view('admin.category.create');
+            $cat = $category;
+            return view('admin.category.edit',compact('cat'));
         }
     }
 
@@ -127,7 +128,7 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $category)
+    public function destroy(Category $category)
     {
         if ($category->products->count() > 0) {
             return redirect()->back()->with('no', 'Xóa không thành công, danh mục đang có sản phẩm');

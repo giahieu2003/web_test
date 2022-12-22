@@ -77,7 +77,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
         $cats = Category::orderBy('id','DESC')->get(); // SELECT * FROM category
         return view('admin.product.edit', compact('cats'));
@@ -118,7 +118,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
         $product->delete();
         return redirect()->route('product.index');

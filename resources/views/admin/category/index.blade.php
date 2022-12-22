@@ -32,7 +32,7 @@
             <td>{{ $cat->name }}</td>
             <td>{{ $cat->status == 0 ? 'Tạm ẩn' : 'Hiển thị' }}</td>
             <td>
-                <form action="{{ route('category.destroy', $cat->id)}}" method="post">
+                <form action="{{ route('category.destroy', $cat->id)}}" method="POST">
                     @csrf @method('DELETE')
                     <a href="{{ route('category.edit', $cat->id)}}" class="btn btn-primary"><i
                             class="fa fa-edit"></i></a>

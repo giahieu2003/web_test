@@ -35,7 +35,8 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="form">
-                        <form action="" method="" role="form">
+                        <form action="" method="post" role="form">
+                            @csrf
                             <div class="title-form">
                                 <h4>Contact Us</h4>
                             </div>
@@ -47,16 +48,16 @@
                                 <label for="">EMAIL ADDRESS</label>
                                 <input type="text" class="form-control" id="email" name="email">
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="">PHONE NUMBER (OPTIONAl)</label>
                                 <input type="text" class="form-control" id="phone" name="phone">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="">YOUR MASSAGE</label>
                                 <textarea name="text" id="" cols="20" rows="5" class="form-control"></textarea>
                             </div>
                             <div class="nut1">
-                                <input class="btn btn-dark nut" type="submit" value="Submit">
+                                <input class="btn btn-dark nut" type="submit" value="Send Contact">
                             </div>
 
                         </form>
