@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('payment_method')->nullable();
             $table->integer('account_id')->unsigned(); 
             $table->tinyInteger('status')->default(0);
+            $table->string('token')->nullable();
             $table->timestamps();
             $table->foreign('account_id')->references('id')->on('accounts');
         });

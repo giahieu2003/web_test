@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Helper\Cart;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Mail\OrderMail;
+use Mail;
 
 class CartController extends Controller
 {
@@ -59,6 +61,10 @@ class CartController extends Controller
 
     public function order_checkout(Cart $cart)
     {
+        if ($cart->totalQuantity == 0) {
+            return redirect()->route('home.index')->with('no', 'Đơn hàng rỗng, vui lòng thêm sản phẩm vào giỏ hàng');
+        }
+        
         $form_data = request()->only('name','email','phone','address','order_note','shipping_method','payment_method');
 
         $form_data['account_id'] = auth('cus')->id();
@@ -76,15 +82,27 @@ class CartController extends Controller
                 OrderDetail::create($dt_data);
             }
 
-            // xóa sesion đi
             // gưi mail xác nhan
-
-            dd ('Ok roi');
+            $email = auth('cus')->user()->email;
+            $token = \Str::random(50);
+            $order->update(['token' => $token]);
+            Mail::to($email)->send(new OrderMail($order, $token));
+            // xóa sesion đi
+            $cart->clear();
+            return redirect()->route('home.index')->with('yes', 'Đặ hàng thành công, hãy check email để xác nhận đơn màng');
         } catch (\Throwable $th) {
+            OrderDetail::where('order_id', $order->id)->delete();
             $order->delete();
 
             dd ('Loi roi');
         }
         dd ($form_data);
+    }
+
+    public function verifyOrder($token)
+    {
+        $order = Order::where('token', $token)->firstOrFail();
+        $order->update(['token' => null, 'status' => 1]);
+        return redirect()->route('home.index')->with('yes', 'Xác nhận đơn hàng thành công');
     }
 }

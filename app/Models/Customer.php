@@ -23,7 +23,8 @@ class Customer extends Authenticatable
         'password',
         'phone',
         'gender',
-        'address'
+        'address',
+        'email_verified_at'
     ];
 
     /**
@@ -44,4 +45,9 @@ class Customer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getToken()
+    {
+        return $this->hasOne(PasswordReset::class, 'email','email');
+    }
 }
